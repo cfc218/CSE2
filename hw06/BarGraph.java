@@ -8,31 +8,36 @@ public class BarGraph {
          int i= 1;
          int j = 1;
       
+      //sets basis for variables
         String monday = "0", tuesday = "0", wednesday = "0", thursday = "0", friday = "0", saturday = "0", sunday= "0";
         double monday1 = 0, tuesday1=0, wednesday1=0, thursday1=0, friday1=0, saturday1=0, sunday1=0;
 
 		//collects data
          do {
 
+        //collects data for monday 
          do { 
  		 System.out.print("Expenses for Monday: $ ");
  		 	monday = expenseScan.next();
- 		 	 
+ 		 	
+ 		 	//detects if proper input was used 
  		 	 try { monday1 = Double.parseDouble(monday); }
  		 	 catch (NumberFormatException e) {
  		 		System.out.println("error: invalid value. Try again."); 
  		 		monday = "0";
  		 	}
-
+            //detects if number is negative
  		 	if(monday1 < 0) {
  		 		System.out.println("error: negative value. Try again.");
  		 		monday = "0";}
+ 		 		//if the number is neither negative and a proper input
+ 		 		//will move onto next date
 		if (monday != "0") { i++;
 				System.out.println(" ");
 		}
           }while (i == 1);
           
-          
+          //rinse repeat for tuesday through sunday
           
           do { 
  		 System.out.print("Expenses for Tuesday: $ ");
@@ -156,20 +161,22 @@ public class BarGraph {
 
     	}while (i < 8);
     	
- 
+        //sets basis for star graphs
     	double star;
     	int star1;
 		
-    	//returns graph
-
+    	
+        // takes integer value of monday
 		star = monday1*100;
  			star1 = (int) star / 100;
  			System.out.print("Monday: ");
+ 		//loop that prints out stars corresponding to value of monday
          do { 
  			System.out.print("*");
 			star1--;
           }while (star1 > 0);
           
+          //enters new line, and rinse repeat for tuesday through sunday
           	System.out.println(" ");
           	star = tuesday1*100;
  			star1 = (int) star / 100;
@@ -225,19 +232,27 @@ public class BarGraph {
 			star1--;
           }while (star1 > 0);
           
+          
+         //calculates average for week
        	double average = (monday1+tuesday1+wednesday1+thursday1+friday1+saturday1+sunday1)/7;
        	double average1 = 0;
        	double averagetotal = average;
        	System.out.printf("\nYour weekly average expenditure is: %.2f", average);
        	
+       	//sets basis for percentage calculations
        	 int percent = 0;
        	 i= 1;
+       	 
+       	 //loop takes random percent, multiplies it to the average, and compounds it
+       	 // onto the total 52 times 
        	 	do {
        	 		percent = (int) Math.floor(Math.random() * 20);
        	 		average1 = average*(1 + ((double) percent/100));
        	 		averagetotal = averagetotal+ average1;
        	 		i++;
        	 	}while (i < 53);
+       	 	
+       	 	//prints out final result
        	System.out.printf("\nYour estimated expenditure for the next four years are: %.2f\n",averagetotal);
 
           

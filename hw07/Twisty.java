@@ -1,4 +1,3 @@
-package hw07;
 import java.util.*;
 public class Twisty {
 	
@@ -64,8 +63,7 @@ public class Twisty {
 		 	}
 		 		//if the number is neither negative and a proper input
 		 		//will move onto next dimension
-		if (width != "0") { i=3;
-				System.out.println(" "); }
+		if (width != "0") { i=3; }
 		}while (i < 2); 
       
        }while ( i < 3);
@@ -99,5 +97,3 @@ public class Twisty {
       
     }
 }
-
-

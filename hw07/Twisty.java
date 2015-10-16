@@ -73,9 +73,10 @@ public class Twisty {
     	 
     //loop forms amounts of lines generated
     for(j = 0; j<(width1); j++) {
-    	
+    	//loop forms amount of characters generated
     	for (k = 0; k<(length1); k++)	{
 
+			//loop forms spaces before each initial character
     		for ( a= 0; a<j; a++) {
     			System.out.print(" ");
     		}	

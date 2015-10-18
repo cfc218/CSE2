@@ -1,5 +1,6 @@
 //HW08 PT II Chris Collado CSE002 
 import java.util.*;
+import java.math.*;
 
 public class StringAnalysis {
 	public static void main(String[] args) {

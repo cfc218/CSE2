@@ -21,7 +21,7 @@ public class Area {
 			success = validation(input);			
 			
 			if ( success == 0 ) {
-				System.out.println("Invalid input try again");	
+				System.out.println("Invalid input try again ");	
 			}
 		}while(success < 1);
 	
